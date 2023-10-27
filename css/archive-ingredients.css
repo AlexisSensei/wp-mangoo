@@ -34,7 +34,8 @@
 .ingredients-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 }
 
 .ingredients-card__content {
@@ -63,4 +64,10 @@
 
 .ingredients-card__content a:visited {
     color: #ffffff;
+}
+
+@media screen and (max-width: 800px) {
+    .ingredients-wrapper {
+        grid-template-columns: 1fr;
+    }
 }

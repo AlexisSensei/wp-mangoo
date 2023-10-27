@@ -15,27 +15,24 @@ get_header();
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+				<h1>Desserts</h1>
 			</header><!-- .page-header -->
-
+			<section class="desserts-container">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
-				the_post();
+				the_post(); ?>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				<div class="dessert-card">
+					<?php the_post_thumbnail() ?>
+					<h2><?php the_title() ?></h2>
+					<a href="<?php the_permalink() ?>">En savoir + sur le dessert</a>
+				</div>
+				
+			<?php endwhile; ?>
+			</section>
 
-			endwhile;
-
-			the_posts_navigation();
+			<?php the_posts_navigation();
 
 		else :
 
@@ -47,5 +44,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

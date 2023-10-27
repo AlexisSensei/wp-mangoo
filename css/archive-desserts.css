@@ -1,0 +1,24 @@
+.post-type-archive-desserts .page-header {
+    height: 250px;
+    background-color: rgb(67, 18, 18);
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+}
+
+.desserts-container {
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-inline: 40px;
+}
+
+.dessert-card {
+    flex: 1;
+}
+
+.dessert-card img {
+    height: 300px;
+    object-fit: cover;
+}
